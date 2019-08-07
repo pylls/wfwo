@@ -1,7 +1,7 @@
 # Simulating Website Fingerprinting with Website Oracles (WF+WO) Attacks
 
-Download [example data here](https://dart.cse.kau.se/example.zip) and unzip in
-this directory.
+Download [example data here](https://dart.cse.kau.se/wfwo/example.zip) and unzip
+in this directory.
 
 First run `example.sh` to simulate WF+WO using the predictions (pre-computed
 from the example data) from the [Deep Fingerprinting (DF) attack by Sirinam et
@@ -103,3 +103,12 @@ Further, in both cases, if the `-wf` flag is provided with a path to the WF
 predictions provided as input to `sim.py`, the script will also print metrics
 and include the WF attack in the figure (if applicable). Note that you also need
 to replace the `load_wf_predictions()` function here as in `sim.py`. 
+
+## Reproducing key figures
+Figures 6-8 from the paper are produced by first using [simple
+DF](https://github.com/pylls/df-simple) to train and classify, resulting in a
+number of predictions. The predictions are then used by this software to produce
+the figures. To reproduce the figures based on the predictions we provide, first
+[download the reproduce
+dataset](https://dart.cse.kau.se/wfwo/reproduce-data.zip), unzip in this
+directory, and finally run `reproduce.sh`.
