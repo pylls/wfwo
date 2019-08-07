@@ -1,7 +1,13 @@
 # Simulating Website Fingerprinting with Website Oracles (WF+WO) Attacks
 
-Download [example data here](https://dart.cse.kau.se/wfwo/example.zip) and unzip
-in this directory.
+This repository contains scripts and links to datasets to complement the paper
+"Website Fingerprinting with Website Oracles", to appear in PETS 2020.  The
+scripts enable the simulation of WF+WO attacks, given the results (predictions)
+from any WF attack. Below you find examples data with detailed instructions as
+well as steps to reproduce the key figures in our paper. 
+
+Clone this repository, download [example data
+here](https://dart.cse.kau.se/wfwo/example.zip) and unzip in the same directory.
 
 First run `example.sh` to simulate WF+WO using the predictions (pre-computed
 from the example data) from the [Deep Fingerprinting (DF) attack by Sirinam et
