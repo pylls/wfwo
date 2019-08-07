@@ -16,14 +16,14 @@ echo ""
 # Below you find lines to run WF+WO sim and metrics against the WTF-PAD and
 # Walkie-Talkie examples also included in examples.zip
 
-echo "Probabilities, as above, but for WTF-PAD defense"
-echo ""
-./sim.py -lm example/df-wtfpad-test-labels-mon.pkl -lu example/df-wtfpad-test-labels-unmon.pkl -lp example/df-wtfpad-predictions.pkl -s example_prob_wtfpad.pkl
-echo ""
-./metrics.py -lm example/df-wtfpad-test-labels-mon.pkl -lu example/df-wtfpad-test-labels-unmon.pkl -wf example/df-wtfpad-predictions.pkl -p example_prob_wtfpad.pkl -o example_wtfpad
+#echo "Probabilities, as above, but for WTF-PAD defense"
+#echo ""
+#./sim.py -lm example/df-wtfpad-test-labels-mon.pkl -lu example/df-wtfpad-test-labels-unmon.pkl -lp example/df-wtfpad-predictions.pkl -s example_prob_wtfpad.pkl
+#echo ""
+#./metrics.py -lm example/df-wtfpad-test-labels-mon.pkl -lu example/df-wtfpad-test-labels-unmon.pkl -wf example/df-wtfpad-predictions.pkl -p example_prob_wtfpad.pkl -o example_wtfpad
 
-echo "Probabilities, as above, but for Walkie-Talkie defense"
-echo ""
-./sim.py -lm example/df-wt-test-labels-mon.pkl -lu example/df-wt-test-labels-unmon.pkl -lp example/df-wt-predictions.pkl -s example_prob_wt.pkl
-echo ""
-./metrics.py -lm example/df-wt-test-labels-mon.pkl -lu example/df-wt-test-labels-unmon.pkl -wf example/df-wt-predictions.pkl -p example_prob_wt.pkl -o example_wt
+#echo "Probabilities, as above, but for Walkie-Talkie defense"
+#echo ""
+#./sim.py -lm example/df-wt-test-labels-mon.pkl -lu example/df-wt-test-labels-unmon.pkl -lp example/df-wt-predictions.pkl -s example_prob_wt.pkl
+#echo ""
+#./metrics.py -lm example/df-wt-test-labels-mon.pkl -lu example/df-wt-test-labels-unmon.pkl -wf example/df-wt-predictions.pkl -p example_prob_wt.pkl -o example_wt
