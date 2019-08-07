@@ -4,17 +4,22 @@ This repository contains scripts and links to datasets to complement the paper
 "Website Fingerprinting with Website Oracles", to appear in PETS 2020.  The
 scripts enable the simulation of WF+WO attacks, given the results (predictions)
 from any WF attack. Below you find examples data with detailed instructions as
-well as steps to reproduce the key figures in our paper. 
+well as steps to reproduce the key figures in our paper. All Python scripts and
+provided data (pickle protocol versions) have been adapted for Python 3, tested on Python 3.7.4.
 
 Clone this repository, download [example data
 here](https://dart.cse.kau.se/wfwo/example.zip) and unzip in the same directory.
+Create a [Python virtual
+environment](https://docs.python.org/3/tutorial/venv.html) and run `pip install
+-r requirements.txt`. This should be enough to get the examples to run. 
 
-First run `example.sh` to simulate WF+WO using the predictions (pre-computed
-from the example data) from the [Deep Fingerprinting (DF) attack by Sirinam et
+Run `example.sh` to simulate WF+WO using the predictions (pre-computed from the
+example data) from the [Deep Fingerprinting (DF) attack by Sirinam et
 al.](https://github.com/deep-fingerprinting/df) with no WF defense in place.
-This will produce two files, `example_prob.pkl` and `example_single.pkl`, that
-are used for calculating metrics. Beyond output of typical ML metrics used for
-WF attacks, there should `example.pdf` created that looks like this:
+This will result in:
+- The files `example_prob_nodef.pkl` and `example_prob_single.pkl`, that are used for calculating metrics. 
+- Output of typical metrics used for WF attacks in the terminal.
+- the file `example_nodef.pdf` that looks something like the figure shown below.
 
 <div align="center">
 <p align="center">
@@ -23,24 +28,29 @@ WF attacks, there should `example.pdf` created that looks like this:
 </div>
 
 ## Details on Simulation
-The two example outputs from the simulation--`example_prob.pkl` and
-`example_single.pkl`--are the results of simulating the WF+WO output of two
+The two example outputs from the simulation--`example_prob_nodef.pkl` and
+`example_prob_single.pkl`--are the results of simulating the WF+WO output of two
 types of WF attacks based on the _WF_ output:
 
 - Probabilities associated to each possible label (resulting in
-  `example-prob.pkl`), and
-- A single label for each test case (resulting in `example-single.pkl`). 
+  `example_prob_nodef.pkl`), and
+- A single label for each test case (resulting in `example_prob_single.pkl`). 
 
 Probabilities are more useful and the defended traces in the example data use
 this output. We include one example with single labels as a useful example for
 those that might, e.g., want to simulate WF+WO on WF attacks that do not provide
 probabilities as output. 
 
-The example data also includes predictions by DF for the WF defenses WTF-PAD and
-Walkie-Talkie. 
+Note above that while we support both types of output from a WF attack, you
+don't need to use both. Typically, probabilities are popular now with deep
+learning based WF attacks.
 
-To run DF attacks (as input to our simulation), we also provide a smaller
-[simple version of DF](https://github.com/pylls/df-simple).
+The example data also includes predictions by DF for the WF defenses WTF-PAD and
+Walkie-Talkie, see the commented out lines in `example.sh` if you also want to
+run them.
+
+To run DF attacks (as input to our simulation), we also provide a [simple
+version of DF](https://github.com/pylls/df-simple).
 
 ### Parameters to the Simulation
 The top of `sim.py` shows the arguments:
@@ -65,16 +75,6 @@ optional arguments:
 
 The defaults are a timeframe of `100` ms, `1.0` probability, max Alexa rank `4`
 (so Alexa rank 10,000), and being lazy when simulating. 
-
-The script `example.sh` runs the following two simulations:
-
-```
-# WF with probabilities
-python sim.py -lm example/df-nodef-test-labels-mon.pkl -lu example/df-nodef-test-labels-unmon.pkl -lp example/df-nodef-predictions.pkl -s example_prob.pkl
-
-# WF with single label
-python sim.py -lm example/df-nodef-test-labels-mon.pkl -lu example/df-nodef-test-labels-unmon.pkl -lp example/df-nodef-predictions-single.pkl -s example_single.pkl
-```
 
 ### Using Predictions From Other WF Attacks
 To use this script to simulate WF+WO attacks based on the output of another WF
@@ -102,8 +102,8 @@ optional arguments:
 The script prints basic ML metrics used by the WF community. In addition, for
 simulated WF+WO attacks that provide probabilities for each label, the script
 also uses a threshold value and provides as output a precision-recall figure.
-The figure is saved to `example.pdf` as default (`-o` flag), as shown at the top
-of this README. 
+The figure is saved to `example_nodef.pdf` as default (`-o` flag), as shown at
+the top of this README. 
 
 Further, in both cases, if the `-wf` flag is provided with a path to the WF
 predictions provided as input to `sim.py`, the script will also print metrics
