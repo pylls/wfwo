@@ -4,19 +4,23 @@ This repository contains scripts and links to datasets to complement the paper
 "Website Fingerprinting with Website Oracles", to appear in PETS 2020.  The
 scripts enable the simulation of WF+WO attacks, given the results (predictions)
 from any WF attack. Below you find examples data with detailed instructions as
-well as steps to reproduce the key figures in our paper. All Python scripts and
-provided data (pickle protocol versions) have been adapted for Python 3, tested on Python 3.7.4.
+well as steps to reproduce the key figures in our paper. 
 
-Clone this repository, download [example data
-here](https://dart.cse.kau.se/wfwo/example.zip) and unzip in the same directory.
-Create a [Python virtual
+## Setup
+To setup, clone this repository, create a [Python 3 virtual
 environment](https://docs.python.org/3/tutorial/venv.html) and run `pip install
--r requirements.txt`. This should be enough to get the examples to run. 
+-r requirements.txt`. All Python scripts and provided data (due to pickle
+protocol versions) have been adapted for Python 3, tested on Python 3.7.4. Note
+that you may have to run `pip3` instead of `pip`, depending on how Python is
+setup on your system. If you don't want to use a virtual environment, it should
+be enough to install the `numpy` and `matplotlib` Python packages.
 
-Run `example.sh` to simulate WF+WO using the predictions (pre-computed from the
-example data) from the [Deep Fingerprinting (DF) attack by Sirinam et
-al.](https://github.com/deep-fingerprinting/df) with no WF defense in place.
-This will result in:
+## Run an example
+Download [the example dataset](https://dart.cse.kau.se/wfwo/example.zip) and unzip
+it in this directory. Run `example.sh` to simulate WF+WO using the predictions
+(pre-computed from the example data) from the [Deep Fingerprinting (DF) attack
+by Sirinam et al.](https://github.com/deep-fingerprinting/df) with no WF defense
+in place. This will result in:
 - The files `example_prob_nodef.pkl` and `example_prob_single.pkl`, that are used for calculating metrics. 
 - Output of typical metrics used for WF attacks in the terminal.
 - the file `example_nodef.pdf` that looks something like the figure shown below.
@@ -26,6 +30,9 @@ This will result in:
   <img src="example.png" width="500px" />
 </p>
 </div>
+
+The code, and as shown in `example.sh`, is split into two scripts: `sim.py` or
+simulation and `metrics.py` for metrics. For more details on each see below. 
 
 ## Details on Simulation
 The two example outputs from the simulation--`example_prob_nodef.pkl` and
