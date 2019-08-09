@@ -118,10 +118,16 @@ and include the WF attack in the figure (if applicable). Note that you also need
 to replace the `load_wf_predictions()` function here as in `sim.py`. 
 
 ## Reproducing key figures
-Figures 6-8 from the paper are produced by first using [simple
-DF](https://github.com/pylls/df-simple) to train and classify, resulting in a
-number of predictions. The predictions are then used by this software to produce
-the figures. To reproduce the figures based on the predictions we provide, first
-[download the reproduce
+Download the [predictions
 dataset](https://dart.cse.kau.se/wfwo/reproduce-data.zip), unzip in this
-directory, and finally run `reproduce.sh`.
+directory, and run `reproduce.sh`. This should generate the nine sub-figures
+that make up Figures 6-8 in the paper.
+
+Note that Figures 6-8 from the paper are based on using [simple
+DF](https://github.com/pylls/df-simple) to train and classify on three different
+datasets, resulting in a number of predictions from the DF attack. This step is
+_not_ part of reproducing our key WF+WO figures above: it takes around ten hours
+(wall time) to train DF on these large datasets with a GPU. Rather, we provide
+the resulting predictions from DF that we based our results on instead in the
+link above. If you want to reproduce the DF part, please reach out to the
+corresponding author of the paper.
