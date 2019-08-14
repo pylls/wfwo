@@ -31,7 +31,7 @@ in place. This will result in:
 </p>
 </div>
 
-The code, and as shown in `example.sh`, is split into two scripts: `sim.py` or
+The code, and as shown in `example.sh`, is split into two scripts: `sim.py` for
 simulation and `metrics.py` for metrics. For more details on each see below. 
 
 ## Details on Simulation
