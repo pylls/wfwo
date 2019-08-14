@@ -109,10 +109,8 @@ optional arguments:
 The script prints basic ML metrics used by the WF community. In addition, for
 simulated WF+WO attacks that provide probabilities for each label, the script
 also uses a threshold value and provides as output a precision-recall figure.
-The figure is saved to `example_nodef.pdf` as default (`-o` flag), as shown at
-the top of this README. 
 
-Further, in both cases, if the `-wf` flag is provided with a path to the WF
+In both cases, if the `-wf` flag is provided with a path to the WF
 predictions provided as input to `sim.py`, the script will also print metrics
 and include the WF attack in the figure (if applicable). Note that you also need
 to replace the `load_wf_predictions()` function here as in `sim.py`. 
