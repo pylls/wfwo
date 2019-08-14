@@ -1,7 +1,7 @@
 # Simulating Website Fingerprinting with Website Oracles (WF+WO) Attacks
 
 This repository contains scripts and links to datasets to complement the paper
-"Website Fingerprinting with Website Oracles", to appear in PETS 2020.  The
+"Website Fingerprinting with Website Oracles", to appear in PETS 2020. The
 scripts enable the simulation of WF+WO attacks, given the results (predictions)
 from any WF attack. Below you find examples data with detailed instructions as
 well as steps to reproduce the key figures in our paper. 
@@ -16,11 +16,11 @@ setup on your system. If you don't want to use a virtual environment, it should
 be enough to install the `numpy` and `matplotlib` Python packages.
 
 ## Run an example
-Download [the example dataset](https://dart.cse.kau.se/wfwo/example.zip) and unzip
-it in this directory. Run `example.sh` to simulate WF+WO using the predictions
-(pre-computed from the example data) from the [Deep Fingerprinting (DF) attack
-by Sirinam et al.](https://github.com/deep-fingerprinting/df) with no WF defense
-in place. This will result in:
+Download [the example dataset](https://dart.cse.kau.se/wfwo/example.zip) and
+unzip it in this directory. Run `example.sh` to simulate WF+WO using the
+predictions (pre-computed from the example data) from the [Deep Fingerprinting
+(DF) attack by Sirinam et al.](https://github.com/deep-fingerprinting/df) with
+no WF defense in place. This will result in:
 - The files `example_prob_nodef.pkl` and `example_prob_single.pkl`, that are used for calculating metrics. 
 - Output of typical metrics used for WF attacks in the terminal.
 - the file `example_nodef.pdf` that looks something like the figure shown below.
@@ -110,10 +110,10 @@ The script prints basic ML metrics used by the WF community. In addition, for
 simulated WF+WO attacks that provide probabilities for each label, the script
 also uses a threshold value and provides as output a precision-recall figure.
 
-In both cases, if the `-wf` flag is provided with a path to the WF
-predictions provided as input to `sim.py`, the script will also print metrics
-and include the WF attack in the figure (if applicable). Note that you also need
-to replace the `load_wf_predictions()` function here as in `sim.py`. 
+In both cases, if the `-wf` flag is provided with a path to the WF predictions
+provided as input to `sim.py`, the script will also print metrics and include
+the WF attack in the figure (if applicable). Note that you also need to replace
+the `load_wf_predictions()` function here as in `sim.py`. 
 
 ## Reproducing key figures
 Download the [predictions
