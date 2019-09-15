@@ -15,7 +15,7 @@ that you may have to run `pip3` instead of `pip`, depending on how Python is
 setup on your system. If you don't want to use a virtual environment, it should
 be enough to install the `numpy` and `matplotlib` Python packages.
 
-## Run an example
+## Run an Example
 Download [the example dataset](https://dart.cse.kau.se/wfwo/example.zip) and
 unzip it in this directory. Run `example.sh` to simulate WF+WO using the
 predictions (pre-computed from the example data) from the [Deep Fingerprinting
@@ -115,7 +115,7 @@ provided as input to `sim.py`, the script will also print metrics and include
 the WF attack in the figure (if applicable). Note that you also need to replace
 the `load_wf_predictions()` function here as in `sim.py`. 
 
-## Reproducing key figures
+## Reproducing Important Figures
 Download the [predictions
 dataset](https://dart.cse.kau.se/wfwo/reproduce-data.zip), unzip in this
 directory, and run `reproduce.sh`. This should generate the nine sub-figures
