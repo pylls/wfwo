@@ -209,7 +209,11 @@ def pred_type_list_of_prob(pred):
 def plotstyle():
     '''Sets a number of parameters for our graphs away from main()'''
     plt.style.use('ggplot')
-    plt.rc('font',family='Ubuntu')
+    
+    # uncomment below if you need TrueType Type 1 complaint fonts (looks a bit ugly)
+    #plt.rcParams['pdf.fonttype'] = 42
+    #plt.rcParams['ps.fonttype'] = 42
+
     plt.rcParams['lines.linewidth'] = 2
     plt.rcParams['font.size'] = 12
     plt.rcParams['xtick.labelsize'] = 12
