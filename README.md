@@ -21,7 +21,8 @@ unzip it in this directory. Run `example.sh` to simulate WF+WO using the
 predictions (pre-computed from the example data) from the [Deep Fingerprinting
 (DF) attack by Sirinam et al.](https://github.com/deep-fingerprinting/df) with
 no WF defense in place. This will result in:
-- The files `example_prob_nodef.pkl` and `example_prob_single.pkl`, that are used for calculating metrics. 
+- The files `example_prob_nodef.pkl` and `example_prob_single.pkl`, that are
+  used for calculating metrics (filetype Python Pickled format). 
 - Output of typical metrics used for WF attacks in the terminal.
 - the file `example_nodef.pdf` that looks something like the figure shown below.
 
